@@ -1,21 +1,64 @@
+let globalVariabel = "null";
+
 // Uppgift 1a1:
 function buttonAction1() {
+
   //Kod här!
+  //Hämta datum/tid och spara den i variabeln myDate.
+  let myDate = new Date();
+  console.log(myDate);
+
+  //Vi behöver ett meddelande.
+  let fras = "Hejsan!\n Idag är det: ";
+  console.log(fras);
+
+  console.log(fras + myDate);
+  alert(fras + myDate);
+
 } // Slut!
 
 // Uppgift 1a2 här:
 function buttonAction2() {
   //Kode här
+  //Spara ett värde från prompten i globalVariabel som användare väljer.
+  globalVariabel = prompt("Skriv något!", "");
+  console.log(globalVariabel);
+  //Skapar en ny lokal variabel som vi använder toUpperCase().
+  let lokalVariabel = globalVariabel.toUpperCase();
+  console.log(lokalVariabel);
+  //Vi visar lokal variabel i en alet().
+  alert(lokalVariabel);
+
 } // Slut!
 
 // Uppgift 1a3 här:
 function buttonAction3() {
   //Kode här!
+  //Vi letar upp id = result3 i DOM'en.
+  document.getElementById("result3").innerHTML = globalVariabel;
 } // Slut!
 
 // Uppgift 1a4 här:
 function buttonAction4() {
   //Kode här!
+  //1:Startar tidtagningen
+  let start = new Date();
+  console.log(start);
+  //3: Kör stoppfunktionen
+  let stopFunction = function () {
+    //4: Sparar stoptid
+    let stop = new Date();
+    //5: Räkna ut tiden
+    let result = stop - start;
+    //6: Lägger till töntig fras.
+    let fras = " sekunder!!! WOW!!! Det var snabbt. :)";
+    //7: Skriver ut resultatet och töntfrasen i ett alertFönster
+    alert(result / 1000 + fras);
+    //8: Sätter tillbaka eventListener till att anropa buttonAction4.
+    document.getElementsByName("button4")[0].onclick = buttonAction4;
+  }
+  //2: Sätter om eventListneren till att anropa stopFunction
+  document.getElementsByName("button4")[0].onclick = stopFunction;
 } // Slut!
 
 // Uppgift 1a5 här:
@@ -59,9 +102,11 @@ function onDoneLoadingHtml() {
   document.getElementsByName("button7")[0].onclick = buttonAction7;
   document.getElementsByName("button8")[0].onclick = buttonAction8;
   document.getElementsByName("button9")[0].onclick = buttonAction9;
+
   document.getElementById("hiddenButton").onclick = function () {
     alert("Neeeej!, \n du startade precis...\nKaffekokaren!");
   };
+  
 }
 
 /*
