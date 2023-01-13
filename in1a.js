@@ -64,11 +64,48 @@ function buttonAction4() {
 // Uppgift 1a5 här:
 function buttonAction5() {
   //Kode här!
+  //1: Vi letar upp våra inputelement och lagrar dess värde i variablerna tal1 och tal2
+  let tal1 = document.getElementById("number1").value;
+  let tal2 = document.getElementById("number2").value;
+  console.log(tal1);
+  console.log(tal2);
+  //Vi kollar så att varsig tal1 eller tal2 är tomma.
+  if (tal1 == "" || tal2 == "") {
+    alert("Du måste fylla i båda fälten för att beräkna något här.");
+  } else if (isNaN(tal1) || isNaN(tal2)) {
+    //Detta kollar att det är ett nummer som fylls i våra inputfält.
+    alert("Här funkar bara nummer! \n Om ni använder decimaltal så använd punkt... ej komma,,,");
+  } else if (tal1 >= 1000 || tal2 >= 1000 || tal1 <= 0 || tal2 <= 0) {
+    alert("Sorry!!! \n Denna trötta gamla dator hanterar bara tal över 0 eller under 1000");
+  } else {
+     //2: Vi beräknar tal1 och tal2
+      let result = tal1 * tal2;
+      console.log("resultatet är: " + result);
+      document.getElementById("result5").innerHTML = result;
+  }
+
+
+  //3: Vi nollställer våra inputelement
+  document.getElementById("number1").value = "";
+  document.getElementById("number2").value = "";
+
 } // Slut!
 
 // Uppgift 1a6 här:
 function buttonAction6() {
   //Kode här!
+  //Letar upp och lagrar textvärdet i textfältet.
+  let ord = document.getElementById("textInput").value;
+  console.log(ord);
+  //Lagra antal mellanslag
+  let minArray = ord.split(" ");
+  //Räknar och lagra antalet mellanslag.
+  let antal = minArray.length;
+  console.log(antal);
+  //Skickar värdet i variabeln 'antal' till span-elementet id='wordCount'
+  document.getElementById("wordCount").innerHTML = antal;
+  //Vi tömmer värdena i vårt textFält.
+  document.getElementById("textInput").value = "";
 } // Slut.
 
 // Uppgift 1a7 här:
