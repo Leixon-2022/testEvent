@@ -111,11 +111,34 @@ function buttonAction6() {
 // Uppgift 1a7 här:
 function buttonAction7() {
   //Kode här!
+  //Knappen ska öppna en promt...
+  let mess = prompt("Skriv något!");
+  console.log(mess);
+  let fullMess = "";
+
+  //Vi for-loopar 10ggr 
+  for (let i = 0; i < 10; i++) {
+    fullMess = fullMess + " " + mess;
+    console.log(fullMess);
+  }
+  //Vi presenterar resultatet i ett alertfönster
+  alert(fullMess);
+
 } // Slut! :)
 
 // Uppgift 1a8 här:
 function buttonAction8() {
   //Kode här!
+  //Vi letar upp bonusknappen i DOM'en...
+  let bonusKnapp = document.getElementById("hiddenButton").style.visibility;
+
+  if (bonusKnapp == "visible") {
+    document.getElementById("hiddenButton").style.visibility = "hidden";
+  } else {
+    document.getElementById("hiddenButton").style.visibility = "visible";
+}
+
+
 } //Slut!
 
 // Sista proceduren: Placera data i en tabell som byggs upp
