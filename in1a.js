@@ -144,6 +144,44 @@ function buttonAction8() {
 // Sista proceduren: Placera data i en tabell som byggs upp
 function buttonAction9() {
   //Kode här
+  //Lagrar innehållet från textrutan.
+  let inputText = document.getElementById("arrayInput").value;
+  console.log(inputText);
+  //Lagrar och splittar texten i en array med hjälp av kommatecken
+  let cellArray = inputText.split(",");
+  console.log(cellArray);
+  //Vi skapar en variabel som lagrar html-taggen table
+  let tableElem = document.createElement("table");
+  //let variabler för tabellen
+  let rowElem;
+  let cellElem;
+  let cellContent;
+  //Vi använder en for-loop för att loopa igenom cellArray
+  for (let i = 0; i < cellArray.length; i++) {
+
+    if (i % 7 === 0) {
+      //Skapa en table-row
+      rowElem = document.createElement("tr");
+      //Lägger vi till en ny rad i tabellen
+      tableElem.appendChild(rowElem);
+    }
+    //Skapar variabel för cellElem
+    cellElem = document.createElement("td");
+
+    //För varje iteration skapas en ny cell med innehåll.
+    //Här var felet!!!!!
+    cellContent = document.createTextNode(cellArray[i]);
+    //Lägger till text i cellen
+    cellElem.appendChild(cellContent);
+    //Lägger till cellen i raden
+    rowElem.appendChild(cellElem);
+  }//Slut på for-loop
+
+  //Hittar och infogar tabellen i diven med id = "tableContainer"
+  let tableContainer = document.getElementById("tableContainer");
+  //Vi rensar rensar bordet på gammal data
+  tableContainer.appendChild(tableElem);
+
 } //Slut! Nu kan ni kolla över eran kod och lämna in. Gott jobbat!
 
 /*

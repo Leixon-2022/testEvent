@@ -53,3 +53,12 @@ textarea {
   visibility: hidden;
   background-color: red;
 }
+
+table {
+  -webkit-border-horizontal-spacing: 5px;
+-webkit-border-vertical-spacing: 5px;
+}
+td {
+border: 2px solid lime;
+padding: 0.5rem;
+}
