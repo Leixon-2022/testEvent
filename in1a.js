@@ -179,7 +179,14 @@ function buttonAction9() {
 
   //Hittar och infogar tabellen i diven med id = "tableContainer"
   let tableContainer = document.getElementById("tableContainer");
-  //Vi rensar rensar bordet på gammal data
+  
+  //Vi ska rensa bordet på gammal data
+  let oldElem = tableContainer.childNodes;
+  for (let i = 0; i < oldElem.length; i++) {
+      //Vi tar bor gamla noder i tableContainer
+    tableContainer.removeChild(oldElem[i]);
+    //När vi har itererat igenom de gamla childNodes så är datan rensad.
+  }
   tableContainer.appendChild(tableElem);
 
 } //Slut! Nu kan ni kolla över eran kod och lämna in. Gott jobbat!
